@@ -1,195 +1,205 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Acre - Riverside Retreat</title>
-    <style>
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; color: #333; line-height: 1.6; background-color: #fdfaf5; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Acre - Riverside Retreat</title>
 
-        .hero {
-            position: relative;
-            background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
-            background-size: cover;
-            color: white;
-            padding: 140px 20px;
-            text-align: center;
-        }
+<style>
+body { 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    margin: 0; 
+    color: #333; 
+    line-height: 1.6; 
+    background: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1950&q=80') 
+    no-repeat center center fixed; 
+    background-size: cover;
+}
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(30, 61, 26, 0.5));
-            z-index: 0;
-        }
+/* overlay całej strony */
+.overlay {
+    background: rgba(255, 255, 255, 0.85);
+    min-height: 100vh;
+}
 
-        .hero h1, .hero p { position: relative; z-index: 1; }
-        .hero h1 { margin: 0; font-size: 3.8rem; font-weight: 800; text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .hero p { font-size: 1.4rem; max-width: 800px; margin: 20px auto 0; text-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+/* language switcher */
+.lang-switcher { 
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    z-index: 1000; 
+    background: white; 
+    padding: 10px 15px; 
+    border-radius: 25px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+    display: flex; 
+    gap: 8px; 
+}
+.lang-btn { cursor: pointer; font-size: 22px; border: none; background: none; }
+.lang-btn.active { border-bottom: 3px solid #000; }
 
-        .lang-switcher { position: fixed; top: 20px; right: 20px; z-index: 1000; background: white; padding: 10px 15px; border-radius: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; gap: 8px; border: 1px solid #ddd; }
-        .lang-btn { cursor: pointer; font-size: 24px; border: none; background: none; transition: 0.3s; }
-        .lang-btn:hover { transform: scale(1.2); }
-        .lang-btn.active { border-bottom: 3px solid #2d5a27; }
-
-        .section-title { text-align: center; margin: 60px 0 40px; color: #1e3d1a; font-size: 2.2rem; font-weight: 700; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; padding: 0 20px 60px; }
-        
-        .card { background: white; border-radius: 16px; padding: 40px; text-align: center; transition: 0.4s; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0,0,0,0.05); }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .card i { font-size: 50px; margin-bottom: 20px; display: block; }
-        .card h3 { color: #1e3d1a; margin-bottom: 15px; }
-
-        .btn { display: inline-block; padding: 12px 25px; background: #2d5a27; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: 0.3s; border: none; cursor: pointer; }
-        .btn:hover { background: #1e3d1a; }
-        
-        .card-stay { border: 2px solid #a3c987; background: #f9fff5; }
-
-        footer { background: #1e3d1a; color: white; text-align: center; padding: 30px; margin-top: 50px; }
-    </style>
-</head>
-<body>
-
-    <div class="lang-switcher">
-        <button class="lang-btn active" id="btn-pl" onclick="changeLang('pl')">🇵🇱</button>
-        <button class="lang-btn" id="btn-en" onclick="changeLang('en')">🇬🇧</button>
-        <button class="lang-btn" id="btn-ua" onclick="changeLang('ua')">🇺🇦</button>
-        <button class="lang-btn" id="btn-ru" onclick="changeLang('ru')">🇷🇺</button>
-    </div>
-
-    <header class="hero">
-        <h1 id="hero-title">Green Acre</h1>
-        <p id="hero-desc">Wyjątkowe miejsce nad rzeką i doświadczenie farm-to-table na szlaku Duhallow Way, Irlandia.</p>
-    </header>
-
-    <h2 id="section-main-title" class="section-title">Nasza Oferta & Barter</h2>
+/* HERO - NOWY HOTELOWY LOOK */
+.hero {
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1950&q=80') 
+    no-repeat center center / cover;
     
-    <div class="grid-container">
-        <div class="card card-stay">
-            <i>🏡</i>
-            <h3 id="cardStay-title">Zarezerwuj Pobyt</h3>
-            <p id="cardStay-text">Odpocznij w sercu irlandzkiej natury. Oferujemy komfortowy wynajem nad samym brzegiem rzeki, idealny dla szukających ciszy i spokoju.</p>
-            <a href="mailto:twoj-email@gmail.com" id="btnStay" class="btn">Rezerwuj</a>
-        </div>
+    padding: 140px 20px;
+    text-align: center;
+    color: #fff;
+}
 
-        <div class="card">
-            <i>🍎</i>
-            <h3 id="card1-title">Ekologiczne Płony</h3>
-            <p id="card1-text">Smak tradycji bez chemii. Oferujemy sezonowe jabłka z naszego sadu oraz warzywa uprawiane naturalnymi metodami.</p>
-            <a href="mailto:twoj-email@gmail.com" id="btn1" class="btn">Zapytaj</a>
-        </div>
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.6)
+    );
+}
 
-        <div class="card">
-            <i>🧺</i>
-            <h3 id="card2-title">Pomoc za Zbiory</h3>
-            <p id="card2-text">Cenimy wspólną pracę. Zapraszamy do pomocy przy zbieraniu owoców. W zamian za Twój czas, otrzymasz pełny kosz świeżych zbiorów.</p>
-            <a href="mailto:twoj-email@gmail.com" id="btn2" class="btn">Chcę pomóc</a>
-        </div>
+.hero h1,
+.hero p {
+    position: relative;
+    z-index: 1;
+}
 
-        <div class="card">
-            <i>🪓</i>
-            <h3 id="card3-title">Drewno za pracę</h3>
-            <p id="card3-text">Uczciwy barter dla obu stron. Oferujemy sezonowane drewno kominkowe w zamian za pomoc przy pracach na farmie.</p>
-            <a href="mailto:twoj-email@gmail.com" id="btn3" class="btn">Ustal szczegóły</a>
-        </div>
-    </div>
+.hero h1 {
+    font-size: 3.8rem;
+    font-weight: 600;
+}
 
-    <footer>
-        <p>&copy; 2026 Green Acre Ireland - Duhallow Way</p>
-    </footer>
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 20px auto 0;
+    color: #f5f5f5;
+}
 
-    <script>
-        const translations = {
-            pl: {
-                heroDesc: "Wyjątkowe miejsce nad rzeką i doświadczenie farm-to-table na szlaku Duhallow Way, Irlandia.",
-                sectionTitle: "Nasza Oferta & Barter",
-                cSt: "Zarezerwuj Pobyt",
-                cSp: "Odpocznij w sercu irlandzkiej natury. Oferujemy komfortowy wynajem nad samym brzegiem rzeki, idealny dla szukających ciszy i spokoju.",
-                bS: "Rezerwuj",
-                c1t: "Ekologiczne Płony",
-                c1p: "Smak tradycji bez chemii. Oferujemy sezonowe jabłka z naszego sadu oraz warzywa uprawiane naturalnymi metodami.",
-                b1: "Zapytaj",
-                c2t: "Pomoc za Zbiory",
-                c2p: "Cenimy wspólną pracę. Zapraszamy do pomocy przy zbieraniu owoców. W zamian za Twój czas, otrzymasz pełny kosz świeżych zbiorów.",
-                b2: "Chcę pomóc",
-                c3t: "Drewno za pracę",
-                c3p: "Uczciwy barter dla obu stron. Oferujemy sezonowane drewno kominkowe w zamian za pomoc przy pracach na farmie.",
-                b3: "Ustal szczegóły"
-            },
-            en: {
-                heroDesc: "A premium riverside countryside retreat and farm-to-table experience on the Duhallow Way, Ireland.",
-                sectionTitle: "What We Offer & Barter",
-                cSt: "Book Your Stay",
-                cSp: "Rest in the heart of Irish nature. We offer comfortable rentals right on the riverbank, perfect for those seeking peace and quiet.",
-                bS: "Book Now",
-                c1t: "Organic Produce",
-                c1p: "Taste tradition without chemicals. We offer seasonal apples from our orchard and naturally grown vegetables.",
-                b1: "Inquire",
-                c2t: "Harvest Help",
-                c2p: "We value community work. Join us for the fruit harvest. In exchange for your time, you'll receive a full basket of fresh produce.",
-                b2: "Join Us",
-                c3t: "Wood for Work",
-                c3p: "A fair barter for both sides. We offer seasoned firewood in exchange for help with farm maintenance and repairs.",
-                b3: "Discuss Details"
-            },
-            ua: {
-                heroDesc: "Унікальне місце біля річки та досвід farm-to-table на тропі Duhallow Way, Ірландія.",
-                sectionTitle: "Наша пропозиція та Бартер",
-                cSt: "Забронювати відпочинок",
-                cSp: "Відпочиньте в серці ірландської природи. Ми пропонуємо комфортну оренду житла прямо на березі річки, ідеально для тих, хто шукає тиші та спокою.",
-                bS: "Забронювати",
-                c1t: "Органічний урожай",
-                c1p: "Смак традицій без хімії. Пропонуємо сезонні яблука з нашого саду та овочі, вирощені натуральними методами.",
-                b1: "Дізнатися",
-                c2t: "Допомога за врожай",
-                c2p: "Ми цінуємо спільну працю. Запрошуємо допомогти зі збором фруктів. В обмін за ваш час ви отримаєте повний кошик свіжого врожаю.",
-                b2: "Хочу допомогти",
-                c3t: "Дрова за роботу",
-                c3p: "Чесний бартер для обох сторін. Пропонуємо сухі дрова для каміна в обмін на допомогу по господарству та ремонт на фермі.",
-                b3: "Обговорити"
-            },
-            ru: {
-                heroDesc: "Премиальный отдых у реки и фермерские продукты на тропе Дахаллоу-Уэй, Ирландия.",
-                sectionTitle: "Что мы предлагаем и Бартер",
-                cSt: "Забронировать отдых",
-                cSp: "Отдохните в сердце ирландской природы. Мы предлагаем комфортную аренду жилья прямо на берегу реки, идеально для ищущих тишины и покоя.",
-                bS: "Заказать",
-                c1t: "Органические продукты",
-                c1p: "Вкус традиций без химии. Предлагаем сезонные яблоки из нашего сада и овощи, выращенные натуральными методами.",
-                b1: "Узнать",
-                c2t: "Помощь в сборе",
-                c2p: "Мы ценим совместный труд. Приглашаем помочь со сбором урожая. В обмен за ваше время вы получите полную корзину продуктов.",
-                b2: "Хочу помочь",
-                c3t: "Дрова за работу",
-                c3p: "Честный бартер для обеих сторон. Предлагаем сухие дрова для камина в обмен на помощь по хозяйству и ремонт на ферме.",
-                b3: "Обсудить"
-            }
-        };
+/* sekcja */
+.section-title { 
+    text-align: center; 
+    margin: 60px 0 40px; 
+    color: #222; 
+    font-size: 2.2rem; 
+}
 
-        function changeLang(lang) {
-            document.getElementById('hero-desc').innerText = translations[lang].heroDesc;
-            document.getElementById('section-main-title').innerText = translations[lang].sectionTitle;
-            document.getElementById('cardStay-title').innerText = translations[lang].cSt;
-            document.getElementById('cardStay-text').innerText = translations[lang].cSp;
-            document.getElementById('btnStay').innerText = translations[lang].bS;
-            document.getElementById('card1-title').innerText = translations[lang].c1t;
-            document.getElementById('card1-text').innerText = translations[lang].c1p;
-            document.getElementById('btn1').innerText = translations[lang].b1;
-            document.getElementById('card2-title').innerText = translations[lang].c2t;
-            document.getElementById('card2-text').innerText = translations[lang].c2p;
-            document.getElementById('btn2').innerText = translations[lang].b2;
-            document.getElementById('card3-title').innerText = translations[lang].c3t;
-            document.getElementById('card3-text').innerText = translations[lang].c3p;
-            document.getElementById('btn3').innerText = translations[lang].b3;
+/* GRID */
+.grid-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px 60px; 
+}
 
-            const buttons = document.querySelectorAll('.lang-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            document.getElementById(`btn-${lang}`).classList.add('active');
-        }
-    </script>
+/* CARD */
+.card { 
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px; 
+    padding: 40px; 
+    text-align: center; 
+    transition: 0.3s; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+}
+
+.card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2); 
+}
+
+.card h3 { color: #222; }
+
+/* button */
+.btn { 
+    display: inline-block; 
+    padding: 12px 25px; 
+    background: #000; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 8px; 
+    font-weight: 600; 
+}
+
+.btn:hover { background: #333; }
+
+/* stay card */
+.card-stay { border: 2px solid #ddd; }
+
+/* footer */
+footer { 
+    background: #111; 
+    color: white; 
+    text-align: center; 
+    padding: 30px; 
+}
+</style>
+</head>
+
+<body>
+<div class="overlay">
+
+<!-- language -->
+<div class="lang-switcher">
+    <button class="lang-btn active" onclick="changeLang('pl')">🇵🇱</button>
+    <button class="lang-btn" onclick="changeLang('en')">🇬🇧</button>
+    <button class="lang-btn" onclick="changeLang('ua')">🇺🇦</button>
+    <button class="lang-btn" onclick="changeLang('ru')">🇷🇺</button>
+</div>
+
+<header class="hero">
+    <h1>Green Acre</h1>
+    <p id="hero-desc">Wyjątkowe miejsce nad rzeką i doświadczenie farm-to-table na szlaku Duhallow Way.</p>
+</header>
+
+<h2 class="section-title">Nasza Oferta</h2>
+
+<div class="grid-container">
+
+<div class="card card-stay">
+    <h3>🏡 Zarezerwuj Pobyt</h3>
+    <p>Odpocznij w sercu natury.</p>
+    <a href="#" class="btn">Rezerwuj</a>
+</div>
+
+<div class="card">
+    <h3>🍎 Ekologiczne Płony</h3>
+    <p>Świeże owoce i warzywa.</p>
+    <a href="#" class="btn">Zapytaj</a>
+</div>
+
+<div class="card">
+    <h3>🧺 Pomoc za Zbiory</h3>
+    <p>Pomóż – dostaniesz plony.</p>
+    <a href="#" class="btn">Pomagam</a>
+</div>
+
+<div class="card">
+    <h3>🪓 Drewno za pracę</h3>
+    <p>Barter uczciwy i naturalny.</p>
+    <a href="#" class="btn">Szczegóły</a>
+</div>
+
+</div>
+
+<footer>
+    © 2026 Green Acre Ireland
+</footer>
+
+</div>
+
+<script>
+function changeLang(lang){
+    document.getElementById('hero-desc').innerText =
+    lang === 'en' ? "A riverside retreat experience in Ireland."
+    : lang === 'ua' ? "Місце відпочинку біля річки в Ірландії."
+    : lang === 'ru' ? "Отдых у реки в Ирландии."
+    : "Wyjątkowe miejsce nad rzeką i doświadczenie farm-to-table na szlaku Duhallow Way.";
+}
+</script>
+
 </body>
 </html>
