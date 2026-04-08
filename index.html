@@ -1,146 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Green Acre Countryside Stay</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f5f0;
-      color: #2f3e2f;
-    }
-
-    header {
-      background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') center/cover;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #4a6b4a;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      text-align: center;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #2f3e2f;
-      color: white;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Acre - Riverside Retreat</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; color: #333; line-height: 1.6; background: #fff; }
+        .lang-switcher { position: fixed; top: 20px; right: 20px; z-index: 1000; background: rgba(255,255,255,0.9); padding: 10px; border-radius: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .lang-btn { cursor: pointer; font-size: 20px; margin: 0 5px; border: none; background: none; transition: transform 0.2s; }
+        .lang-btn:hover { transform: scale(1.2); }
+        
+        .hero { background: #2d5a27; color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { margin: 0; font-size: 3rem; }
+        
+        .section-title { text-align: center; margin: 50px 0 30px; color: #2d5a27; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto 50px; padding: 0 20px; }
+        
+        .card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 30px; text-align: center; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .card i { font-size: 45px; display: block; margin-bottom: 15px; }
+        .card h3 { color: #2d5a27; margin-bottom: 15px; }
+        .card p { font-size: 0.95rem; color: #555; min-height: 80px; }
+        
+        .btn { display: inline-block; margin-top: 20px; padding: 10px 25px; background: #2d5a27; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .btn:hover { background: #1e3d1a; }
+        footer { background: #333; color: white; text-align: center; padding: 20px; }
+    </style>
 </head>
 <body>
 
-<header>
-  <div>
-    <h1>Green Acre Countryside Stay</h1>
-    <p>Where quiet meets countryside</p>
-    <a href="#" class="btn">Book Your Stay</a>
-  </div>
-</header>
-
-<section>
-  <h2>The Experience</h2>
-  <div class="features">
-    <div class="card">🌿 Fresh local food</div>
-    <div class="card">🌊 Riverside relaxation</div>
-    <div class="card">🥾 Near hiking trails</div>
-    <div class="card">🏹 Archery & activities</div>
-  </div>
-</section>
-
-<section>
-  <h2>Farm to Table</h2>
-  <p style="text-align:center; max-width:600px; margin:auto;">
-    Pick fresh ingredients from the garden, cook together, and enjoy meals the way they were meant to be.
-  </p>
-</section>
-
-<section>
-  <h2>Stay With Us</h2>
-  <p style="text-align:center; max-width:600px; margin:auto;">
-    Cozy rooms designed for rest and simplicity. Open April to September.
-  </p>
-</section>
-
-<footer>
-  <p>Green Acre Countryside Stay • Built around nature</p>
-</footer>
-<section style="padding: 50px 20px; background: #f9f9f9; text-align: center; font-family: sans-serif;">
-    <h2 style="color: #2d5a27; margin-bottom: 30px;">Nasza Oferta & Współpraca</h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
-        
-        <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <div style="font-size: 40px;">🍎</div>
-            <h3 style="color: #2d5a27;">Płony Rolne</h3>
-            <p>Świeże jabłka z naszego sadu oraz sezonowe warzywa uprawiane naturalnie.</p>
-        </div>
-
-        <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <div style="font-size: 40px;">🧺</div>
-            <h3 style="color: #2d5a27;">Pomoc przy zbiorach</h3>
-            <p>Pomóż nam w sadzie i zbierz kosz świeżych owoców dla siebie. Zapraszamy chętne ręce!</p>
-        </div>
-
-        <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <div style="font-size: 40px;">🪓</div>
-            <h3 style="color: #2d5a27;">Drewno za pracę</h3>
-            <p>Oferujemy sezonowane drewno kominkowe w zamian za pomoc przy pracach gospodarskich.</p>
-        </div>
-
-        <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <div style="font-size: 40px;">🏹</div>
-            <h3 style="color: #2d5a27;">Łucznictwo</h3>
-            <p>Profesjonalne stanowisko do łucznictwa. Idealna rozrywka podczas pobytu nad rzeką.</p>
-        </div>
-
+    <div class="lang-switcher">
+        <button class="lang-btn" onclick="changeLang('pl')">🇵🇱</button>
+        <button class="lang-btn" onclick="changeLang('en')">🇬🇧</button>
+        <button class="lang-btn" onclick="changeLang('ru')">🇷🇺</button>
     </div>
-</section>
+
+    <header class="hero">
+        <h1 id="hero-title">Green Acre</h1>
+        <p id="hero-desc">A premium riverside countryside retreat and farm-to-table experience on the Duhallow Way, Ireland.</p>
+    </header>
+
+    <h2 id="section-main-title" class="section-title">Co oferujemy & Współpraca</h2>
+    
+    <div class="grid-container">
+        <div class="card">
+            <i>🍎</i>
+            <h3 id="card1-title">Ekologiczne Płony</h3>
+            <p id="card1-text">Nasza ziemia rodzi bez pośpiechu i chemii. Oferujemy sezonowe jabłka z tradycyjnego sadu oraz warzywa uprawiane metodami naturalnymi.</p>
+            <a href="mailto:twoj-email@gmail.com" id="btn1" class="btn">Zapytaj</a>
+        </div>
+
+        <div class="card">
+            <i>🧺</i>
+            <h3 id="card2-title">Pomoc za Zbiory</h3>
+            <p id="card2-text">Zapraszamy do pomocy przy zbieraniu owoców. W zamian za kilka godzin pracy na świeżym powietrzu, zabierzesz ze sobą pełny kosz zbiorów.</p>
+            <a href="mailto:twoj-email@gmail.com" id="btn2" class="btn">Chcę pomóc</a>
+        </div>
+
+        <div class="card">
+            <i>🪓</i>
+            <h3 id="card3-title">Drewno za pracę</h3>
+            <p id="card3-text">Oferujemy sezonowane drewno kominkowe w zamian za pomoc przy pracach gospodarskich i naprawach na farmie. Uczciwa wymiana.</p>
+            <a href="mailto:twoj-email@gmail.com" id="btn3" class="btn">Ustal szczegóły</a>
+        </div>
+
+        <div class="card">
+            <i>🏹</i>
+            <h3 id="card4-title">Łucznictwo</h3>
+            <p id="card4-text">Odkryj dawną sztukę skupienia nad brzegiem rzeki. Oferujemy sesje łucznicze w malowniczej scenerii dla gości i wędrowców.</p>
+            <a href="mailto:twoj-email@gmail.com" id="btn4" class="btn">Zarezerwuj</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Green Acre Ireland - Duhallow Way</p>
+    </footer>
+
+    <script>
+        const translations = {
+            pl: {
+                heroDesc: "Wyjątkowe miejsce nad rzeką i doświadczenie farm-to-table na szlaku Duhallow Way, Irlandia.",
+                sectionTitle: "Co oferujemy & Współpraca (Barter)",
+                c1t: "Ekologiczne Płony",
+                c1p: "Nasza ziemia rodzi bez pośpiechu i chemii. Oferujemy sezonowe jabłka z tradycyjnego sadu oraz warzywa uprawiane metodami naturalnymi.",
+                b1: "Zapytaj",
+                c2t: "Pomoc za Zbiory",
+                c2p: "Zapraszamy do pomocy przy zbieraniu owoców. W zamian za kilka godzin pracy na świeżym powietrzu, zabierzesz ze sobą pełny kosz zbiorów.",
+                b2: "Chcę pomóc",
+                c3t: "Drewno za pracę",
+                c3p: "Oferujemy sezonowane drewno kominkowe w zamian za pomoc przy pracach gospodarskich i naprawach na farmie. Uczciwa wymiana.",
+                b3: "Ustal szczegóły",
+                c4t: "Łucznictwo",
+                c4p: "Odkryj dawną sztukę skupienia nad brzegiem rzeki. Oferujemy sesje łucznicze w malowniczej scenerii dla gości i wędrowców.",
+                b4: "Zarezerwuj"
+            },
+            en: {
+                heroDesc: "A premium riverside countryside retreat and farm-to-table experience on the Duhallow Way, Ireland.",
+                sectionTitle: "What We Offer & Cooperation (Barter)",
+                c1t: "Organic Produce",
+                c1p: "Our land produces without haste or chemicals. We offer seasonal apples from a traditional orchard and naturally grown vegetables.",
+                b1: "Inquire",
+                c2t: "Harvest Help",
+                c2p: "Join us for the harvest. In exchange for a few hours of work in the fresh air, you'll take home a full basket of fresh produce.",
+                b2: "Join us",
+                c3t: "Wood for Work",
+                c3p: "We offer seasoned firewood in exchange for help with farm maintenance and repairs. A fair exchange of labor for value.",
+                b3: "Discuss details",
+                c4t: "Archery",
+                c4p: "Discover the ancient art of focus by the riverbank. We offer archery sessions in a scenic setting for guests and hikers.",
+                b4: "Book now"
+            },
+            ru: {
+                heroDesc: "Премиальный отдых у реки и фермерские продукты на тропе Дахаллоу-Уэй, Ирландия.",
+                sectionTitle: "Что мы предлагаем и сотрудничество (Бартер)",
+                c1t: "Органические продукты",
+                c1p: "Наша земля рождает без спешки и химии. Предлагаем сезонные яблоки из традиционного сада и овощи, выращенные натурально.",
+                b1: "Узнать больше",
+                c2t: "Помощь в сборе",
+                c2p: "Приглашаем помочь со сбором урожая. В обмен на несколько часов работы на свежем воздухе вы получите полную корзину продуктов.",
+                b2: "Хочу помочь",
+                c3t: "Дрова за работу",
+                c3p: "Предлагаем сухие дрова для камина в обмен на помощь по хозяйству и ремонт на ферме. Честный обмен.",
+                b3: "Обсудить",
+                c4t: "Стрельба из лука",
+                c4p: "Откройте для себя искусство концентрации на берегу реки. Мы предлагаем занятия стрельбой из лука для гостей и туристов.",
+                b4: "Заказать"
+            }
+        };
+
+        function changeLang(lang) {
+            document.getElementById('hero-desc').innerText = translations[lang].heroDesc;
+            document.getElementById('section-main-title').innerText = translations[lang].sectionTitle;
+            document.getElementById('card1-title').innerText = translations[lang].c1t;
+            document.getElementById('card1-text').innerText = translations[lang].c1p;
+            document.getElementById('btn1').innerText = translations[lang].b1;
+            document.getElementById('card2-title').innerText = translations[lang].c2t;
+            document.getElementById('card2-text').innerText = translations[lang].c2p;
+            document.getElementById('btn2').innerText = translations[lang].b2;
+            document.getElementById('card3-title').innerText = translations[lang].c3t;
+            document.getElementById('card3-text').innerText = translations[lang].c3p;
+            document.getElementById('btn3').innerText = translations[lang].b3;
+            document.getElementById('card4-title').innerText = translations[lang].c4t;
+            document.getElementById('card4-text').innerText = translations[lang].c4p;
+            document.getElementById('btn4').innerText = translations[lang].b4;
+        }
+    </script>
 </body>
 </html>
