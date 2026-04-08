@@ -62,7 +62,7 @@ body {
     box-shadow: 0 2px 8px rgba(74,158,77,0.4);
 }
 
-/* HERO - większy efekt wow */
+/* HERO */
 .hero {
     position: relative;
     background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3)),
@@ -84,12 +84,6 @@ body {
     letter-spacing: 3px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    animation: slideIn 0.8s ease-out;
-}
-
-@keyframes slideIn {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
 }
 
 .hero p {
@@ -99,7 +93,7 @@ body {
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
-/* INFO BANNER - nowa sekcja zachęcająca */
+/* INFO BANNER */
 .info-banner {
     background: linear-gradient(135deg, #2c5e2e, #4a9e4d);
     color: white;
@@ -131,7 +125,7 @@ body {
     padding: 50px 20px;
 }
 
-/* CARD - nowoczesne karty z efektami */
+/* CARD */
 .card {
     background: white;
     padding: 35px 25px;
@@ -195,7 +189,7 @@ body {
     box-shadow: 0 5px 15px rgba(74,158,77,0.3);
 }
 
-/* CTA SECTION - nowa sekcja */
+/* CTA SECTION */
 .cta-section {
     background: linear-gradient(135deg, #1a1a2e, #16213e);
     color: white;
@@ -274,7 +268,6 @@ footer {
     }
 }
 
-/* Dodatkowe animacje */
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -307,51 +300,51 @@ footer {
     <p id="hero-desc">Twoje miejsce spokoju nad rzeką</p>
 </header>
 
-<!-- Nowy banner informacyjny -->
-<div class="info-banner" id="info-banner">
-    <h3>✨ Witaj w zielonej oazie ✨</h3>
-    <p id="banner-text">Odkryj harmonię z naturą, spróbuj czegoś nowego i odpocznij od miejskiego zgiełku</p>
+<!-- Banner informacyjny - DODANE data-key -->
+<div class="info-banner">
+    <h3 id="banner-title" data-key="banner_title">✨ Witaj w zielonej oazie ✨</h3>
+    <p id="banner-text" data-key="banner_text">Odkryj harmonię z naturą, spróbuj czegoś nowego i odpocznij od miejskiego zgiełku</p>
 </div>
 
 <div class="grid-container">
 
 <div class="card">
-    <h3 data-key="stay_title">🏡 Pobyt</h3>
-    <p data-key="stay_text">Komfortowe domki nad samą rzeką</p>
+    <h3 data-key="stay_title">🏡 Domki nad rzeką</h3>
+    <p data-key="stay_text">Komfortowe domki z widokiem na rzekę. Idealne na romantyczny weekend lub rodzinny wypad</p>
     <a href="#" class="btn" data-key="stay_btn">Sprawdź dostępność →</a>
 </div>
 
 <div class="card">
     <h3 data-key="archery_title">🏹 Łucznictwo</h3>
-    <p data-key="archery_text">Poczuj ducha Robin Hooda</p>
+    <p data-key="archery_text">Naucz się strzelać z łuku pod okiem instruktora. Świetna zabawa dla każdego!</p>
     <a href="#" class="btn" data-key="archery_btn">Zapisz się →</a>
 </div>
 
 <div class="card">
     <h3 data-key="apple_title">🍎 Ekologiczne produkty</h3>
-    <p data-key="apple_text">Prosto z naszej farmy</p>
+    <p data-key="apple_text">Świeże owoce, warzywa i miód prosto z naszej ekologicznej farmy</p>
     <a href="#" class="btn" data-key="apple_btn">Zamów koszyk →</a>
 </div>
 
 <div class="card">
     <h3 data-key="harvest_title">🧺 Wolontariat</h3>
-    <p data-key="harvest_text">Pomagaj i zbieraj plony</p>
+    <p data-key="harvest_text">Pomóż w zbiorach i zabierz darmowe produkty do domu. Ucz się i pracuj z nami</p>
     <a href="#" class="btn" data-key="harvest_btn">Dołącz do nas →</a>
 </div>
 
 <div class="card">
     <h3 data-key="wood_title">🪓 Barter</h3>
-    <p data-key="wood_text">Twoja praca = nasze drewno</p>
+    <p data-key="wood_text">Potrzebujesz drewna? Pomóż nam w pracach, a my podzielimy się surowcem</p>
     <a href="#" class="btn" data-key="wood_btn">Dowiedz się więcej →</a>
 </div>
 
 </div>
 
-<!-- Nowa sekcja CTA -->
+<!-- Sekcja CTA - DODANE data-key -->
 <div class="cta-section">
-    <h2>🌱 Gotowy na przygodę?</h2>
-    <p>Dołącz do społeczności Green Acre i przeżyj niezapomniane chwile na łonie natury</p>
-    <a href="#" class="cta-button" id="cta-btn">Zarezerwuj swój pobyt</a>
+    <h2 id="cta-title" data-key="cta_title">🌱 Gotowy na przygodę?</h2>
+    <p id="cta-text" data-key="cta_text">Dołącz do społeczności Green Acre i przeżyj niezapomniane chwile na łonie natury</p>
+    <a href="#" class="cta-button" id="cta-btn" data-key="cta_btn">Zarezerwuj swój pobyt</a>
 </div>
 
 <footer>
@@ -365,7 +358,8 @@ footer {
 const translations = {
     pl: {
         hero: "🌿 Twoje miejsce spokoju nad rzeką",
-        banner: "🌿 Odkryj harmonię z naturą, spróbuj czegoś nowego i odpocznij od miejskiego zgiełku",
+        banner_title: "✨ Witaj w zielonej oazie ✨",
+        banner_text: "🌿 Odkryj harmonię z naturą, spróbuj czegoś nowego i odpocznij od miejskiego zgiełku",
         stay_title: "🏡 Domki nad rzeką",
         stay_text: "Komfortowe domki z widokiem na rzekę. Idealne na romantyczny weekend lub rodzinny wypad",
         stay_btn: "Sprawdź dostępność →",
@@ -376,16 +370,19 @@ const translations = {
         apple_text: "Świeże owoce, warzywa i miód prosto z naszej ekologicznej farmy",
         apple_btn: "Zamów koszyk →",
         harvest_title: "🧺 Wolontariat",
-        harveest_text: "Pomóż w zbiorach i zabierz darmowe produkty do domu. Ucz się i pracuj z nami",
+        harvest_text: "Pomóż w zbiorach i zabierz darmowe produkty do domu. Ucz się i pracuj z nami",
         harvest_btn: "Dołącz do nas →",
         wood_title: "🪓 Barter",
         wood_text: "Potrzebujesz drewna? Pomóż nam w pracach, a my podzielimy się surowcem",
         wood_btn: "Dowiedz się więcej →",
-        cta: "Zarezerwuj swój pobyt"
+        cta_title: "🌱 Gotowy na przygodę?",
+        cta_text: "Dołącz do społeczności Green Acre i przeżyj niezapomniane chwile na łonie natury",
+        cta_btn: "Zarezerwuj swój pobyt"
     },
     en: {
         hero: "🌿 Your peaceful riverside retreat",
-        banner: "🌿 Discover harmony with nature, try something new and escape the city noise",
+        banner_title: "✨ Welcome to the green oasis ✨",
+        banner_text: "🌿 Discover harmony with nature, try something new and escape the city noise",
         stay_title: "🏡 Riverside Cottages",
         stay_text: "Comfortable cottages with river views. Perfect for a romantic weekend or family trip",
         stay_btn: "Check availability →",
@@ -401,11 +398,14 @@ const translations = {
         wood_title: "🪓 Barter",
         wood_text: "Need wood? Help us with work and we'll share the resource",
         wood_btn: "Learn more →",
-        cta: "Book your stay"
+        cta_title: "🌱 Ready for an adventure?",
+        cta_text: "Join the Green Acre community and experience unforgettable moments in nature",
+        cta_btn: "Book your stay"
     },
     ua: {
         hero: "🌿 Ваш спокійний відпочинок біля річки",
-        banner: "🌿 Відкрийте гармонію з природою, спробуйте щось нове та відпочиньте від міського шуму",
+        banner_title: "✨ Ласкаво просимо до зеленої оази ✨",
+        banner_text: "🌿 Відкрийте гармонію з природою, спробуйте щось нове та відпочиньте від міського шуму",
         stay_title: "🏡 Будинки біля річки",
         stay_text: "Комфортні будиночки з видом на річку. Ідеально для романтичного вікенду чи сімейної подорожі",
         stay_btn: "Перевірити наявність →",
@@ -421,11 +421,14 @@ const translations = {
         wood_title: "🪓 Бартер",
         wood_text: "Потрібні дрова? Допоможіть нам з роботою, і ми поділимося ресурсом",
         wood_btn: "Дізнатися більше →",
-        cta: "Забронювати проживання"
+        cta_title: "🌱 Готові до пригоди?",
+        cta_text: "Приєднуйтесь до спільноти Green Acre та пережийте незабутні моменти на лоні природи",
+        cta_btn: "Забронювати проживання"
     },
     ru: {
         hero: "🌿 Ваш спокойный отдых у реки",
-        banner: "🌿 Откройте гармонию с природой, попробуйте что-то новое и отдохните от городской суеты",
+        banner_title: "✨ Добро пожаловать в зеленый оазис ✨",
+        banner_text: "🌿 Откройте гармонию с природой, попробуйте что-то новое и отдохните от городской суеты",
         stay_title: "🏡 Домики у реки",
         stay_text: "Комфортабельные домики с видом на реку. Идеально для романтического уикенда или семейной поездки",
         stay_btn: "Проверить наличие →",
@@ -441,7 +444,9 @@ const translations = {
         wood_title: "🪓 Бартер",
         wood_text: "Нужны дрова? Помогите нам с работой, и мы поделимся ресурсом",
         wood_btn: "Узнать больше →",
-        cta: "Забронировать проживание"
+        cta_title: "🌱 Готовы к приключениям?",
+        cta_text: "Присоединяйтесь к сообществу Green Acre и переживите незабываемые моменты на лоне природы",
+        cta_btn: "Забронировать проживание"
     }
 };
 
@@ -449,11 +454,19 @@ function changeLang(lang) {
     // Zmiana hero
     document.getElementById('hero-desc').innerText = translations[lang].hero;
     
-    // Zmiana bannera
-    document.getElementById('banner-text').innerText = translations[lang].banner;
+    // Zmiana bannera (tytuł i tekst)
+    const bannerTitle = document.getElementById('banner-title');
+    const bannerText = document.getElementById('banner-text');
+    if (bannerTitle) bannerTitle.innerText = translations[lang].banner_title;
+    if (bannerText) bannerText.innerText = translations[lang].banner_text;
     
-    // Zmiana przycisku CTA
-    document.getElementById('cta-btn').innerText = translations[lang].cta;
+    // Zmiana CTA (tytuł, tekst i przycisk)
+    const ctaTitle = document.getElementById('cta-title');
+    const ctaText = document.getElementById('cta-text');
+    const ctaBtn = document.getElementById('cta-btn');
+    if (ctaTitle) ctaTitle.innerText = translations[lang].cta_title;
+    if (ctaText) ctaText.innerText = translations[lang].cta_text;
+    if (ctaBtn) ctaBtn.innerText = translations[lang].cta_btn;
     
     // Zmiana wszystkich elementów z data-key
     document.querySelectorAll('[data-key]').forEach(el => {
@@ -483,7 +496,7 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 // Ustaw domyślny język
 changeLang('pl');
 
-// Smooth scroll dla kotwic (jeśli ktoś doda)
+// Smooth scroll dla kotwic
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
